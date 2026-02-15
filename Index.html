@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Official Platonic Valentine Experience™ (Emerald Edition)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Tap to activate audio (starts muted) -->
+  <audio id="bgMusic" loop muted>
+    <source src="asssets/music/olivia_dean_so_easy_to_fall_in_love_lyrics_mp3_5886.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div id="particles" aria-hidden="true"></div>
+
+  <div id="hud">
+    <button id="audioBtn" class="audio-btn" aria-label="Toggle audio">🔇 Tap for dramatic music</button>
+  </div>
+
+  <main id="app">
+
+    <!-- STAGE 1 -->
+    <section class="stage active" id="stage1">
+      <div class="center">
+        <h1>❤️HAPPY VALENTINE’S DAY BEA❤️</h1>
+        <p class="terms">(terms and conditions apply)</p>
+
+        <button class="tiny-link" id="unlessBtn">unless…</button>
+
+        <img src="asssets/images/flower dog.png" id="dogBtn" class="dog-sticker" alt="dog holding flower">
+        
+
+        <div class="terminal" id="terminal" hidden>
+          <div class="term-line" id="termLine"></div>
+        </div>
+
+        <div id="hackReveal" class="hack-reveal" hidden>
+          <img class="meme" src="asssets/images/curry%20shootin%20from%20moon.png" alt="Stephen Curry long-range shot meme" />
+          <p class="caption"></p>
+
+          <a id="waLink" class="primary-btn" href="#" target="_blank" rel="noopener">
+            Override System &amp; Text Him
+          </a>
+          <p class="subnote">This action has been reviewed by HR, Legal, and the Department of Yearning.</p>
+
+          <button class="no-btn" id="continueBtn" type="button">Continue the Experience</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STAGE 2 -->
+    <section class="stage" id="stage2">
+      <div class="center">
+        <h2>You have selected: <span class="pill">PLATONIC VALENTINE</span></h2>
+
+        <div class="button-area">
+          <button class="yes-btn" id="yesBtn">YES</button>
+          <button class="no-btn" id="noBtn">NO</button>
+        </div>
+
+        <div id="stage2Meme" class="inline-meme" hidden>
+          <img class="meme" src="asssets/images/guy%20listening%20meme.png" alt="guy listening meme" />
+          <p class="caption">“The Big Yahu is watching.”</p>
+        </div>
+
+        <p id="noMessage" class="system-msg"></p>
+      </div>
+    </section>
+
+    <!-- STAGE 3 (RESTORED) -->
+  <!-- STAGE 3 -->
+<section class="stage" id="stage3">
+  <div class="contract">
+    <h2>PLATONIC RIZZ DECLARATION</h2>
+    <p class="muted"></p>
+
+    <div class="rizz-cards">
+      <div class="rizz-card">Are you my Dad's belt, coz u hit different.</div>
+      <div class="rizz-card">I like people with a sense of humor, but i like hu-mor”</div>
+      <div class="rizz-card">I would share my fries with you. That’s basically a proposal in my culture.</div>
+      <div class="rizz-card">Your favorite color is green, so I am respectfully becoming a forest.</div>
+      <div class="rizz-card">No pen or paper but you still draw my attention.</div>
+    </div>
+
+    <button class="primary-btn" id="stage3NextBtn">Continue the drama</button>
+    <p class="subnote"></p>
+  </div>
+</section>
+
+    <!-- STAGE 4 -->
+    <section class="stage" id="stage4">
+      <div class="spotlight">
+        <div id="devotionText" class="monologue"></div>
+      </div>
+    </section>
+
+    <!-- STAGE 5 -->
+    <section class="stage" id="stage5">
+      <div class="swipe-wrap">
+        <div class="swipe-hint">Swipe →</div>
+        <div id="swipeDeck" class="swipe-deck"></div>
+      </div>
+    </section>
+
+    <!-- STAGE 6 -->
+    <section class="stage" id="stage6">
+      <div class="center wide">
+        <h2>Archived Evidence of Me Being Down Astronomical</h2>
+        <p class="muted">Tap an item to expand. All evidence is admissible in the Court of Vibes.</p>
+
+        <div class="meme-grid" id="memeGrid">
+          <figure class="meme-card"><img src="asssets/images/hii%20ni%20yako.png" alt="meme"><figcaption>.</figcaption></figure>
+          <figure class="meme-card"><img src="asssets/images/cupid.jpg" alt="meme"><figcaption>Cupid shot me!</figcaption></figure>
+          <figure class="meme-card"><img src="asssets/images/leg%20day.png" alt="meme"><figcaption>Just here coz it's funny</figcaption></figure>
+        </div>
+
+        <button class="primary-btn" id="toFinalBtn">Proceed to Calm Ending</button>
+      </div>
+    </section>
+
+    <!-- FINAL -->
+    <section class="stage" id="stage7">
+      <div class="final">
+        <div id="typewriter" class="letter" aria-live="polite"></div>
+        <a class="primary-btn"  target="_blank"  rel="noopener"  href="https://wa.me/15712519253?text=i%20love%20you%20too%E2%80%A6%20platonically%20ofc">Click Me!</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal for meme expand -->
+  <div id="modal" class="modal" hidden>
+    <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+    <img id="modalImg" alt="Expanded meme" />
+    <p id="modalCap" class="caption"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

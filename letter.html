@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Final Letter</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #022d17, #014421);
+    color: #e8f5e9;
+    font-family: Georgia, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+}
+
+#letter {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    white-space: pre-wrap;
+}
+
+.cursor {
+    display: inline-block;
+    width: 8px;
+    background: #00ff88;
+    margin-left: 4px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+    <source src="assets/music/careless.mp3" type="audio/mp3">
+</audio>
+
+<div class="container fade-in">
+    <div id="letter"></div><span class="cursor"></span>
+</div>
+
+<script>
+// Unlock music on first interaction
+document.addEventListener("click", function() {
+    const music = document.getElementById("bgMusic");
+    music.play();
+});
+
+// Full Letter Text
+const text = `Part of healing my attachment issues apparently involves “emotional maturity” and “communicating feelings,” which feels slightly illegal but here we are.
+
+I’m not the type to throw the word love around like it’s a promo code, so I’ll just say this: I genuinely like the concept of you.
+
+Not just the idea of you. Not just the highlight reel. The actual, full, sometimes chaotic, sometimes confusing, emerald-loving you.
+
+I once read on TikTok (a deeply scholarly institution) that it doesn’t matter what shade of blue I am if your favorite color is green. And that stuck with me more than it should have.
+
+Because the truth is — I don’t need to audition to be loved back. It’s not a talent show. It’s not a competition. It’s not something you earn with performance. It’s a choice.
+
+And whether that choice is me or not, I’m strangely at peace with liking you anyway.
+
+Of all the words you'll ever hear, remember this: life is likely just the right length to need therapy.
+
+May you stay seriously silly.
+May you be wickedly kind.
+May you be brilliantly dumb, and sometimes stupidly bright.
+May your certainty always leave room for doubt.
+May your weirdness be the norm.
+May the coolest thing about you always be your warmth.
+
+May you be powerfully vulnerable — or at least mightily soft.
+May you be a contradiction and yet somehow completely whole.
+May you be dramatic but grounded.
+May you be confident but curious.
+May you never shrink yourself for comfort.
+May you always choose joy when it’s available.
+
+Whether you are any, none, or all of the above…
+
+Above all, may you know that you are loved.`;
+
+// Typewriter Animation
+let i = 0;
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementById("letter").innerHTML += text.charAt(i);
+
+        // Slightly slower typing for final line
+        if (text.substring(i).startsWith("Above all")) {
+            setTimeout(typeWriter, 80);
+        } else {
+            setTimeout(typeWriter, 35);
+        }
+
+        i++;
+    } else {
+        document.querySelector(".cursor").style.display = "none";
+    }
+}
+
+typeWriter();
+</script>
+
+</body>
+</html>
+
